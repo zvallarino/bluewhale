@@ -2,19 +2,91 @@
 #include <iostream>
 #include <sstream>
 
-
 int main()
 {
-    std::string color;
-    std::cout << "What color car did you see? ";
-    std::getline(std::cin, color);
-    std::cout << "I saw a " << color << " car yesterday\n";
 
+    constexpr int scores[]{ 84, 92, 76, 81, 56 };
+    constexpr int lengthOfArray{ static_cast<int>(std::size(scores)) };
 
+    int maxIndex{ 0 };
 
-  
+    for (int student{ 0 }; student < lengthOfArray; ++student)
+    {
+        if (scores[student] > scores[maxIndex])
+        {
+            maxIndex = student;
+        }
+    }
+
+    std::cout << "The best score was " << scores[maxIndex] << '\n';
+
     return 0;
 }
+//
+//namespace Animals {
+//    enum Animals {
+//        chicken,
+//        dog,
+//        cat,
+//        elephant,
+//        duck,
+//        snake,
+//
+//        total_legs,
+//    };
+//}
+//
+//
+//int main()
+//{
+//
+//    constexpr int array[]{ 4, 6, 7, 3, 8, 2, 1, 9, 5 };
+//    constexpr int lengthOfArray{ static_cast<int>(std::size(array)) };
+//
+//    int i{ 0 };
+//    int x{};
+//    while (i < 1) {
+//        std::cout << "hit me with a number" << "\n";
+//        std::cin >> x;
+//
+//        if (std::cin.fail())
+//        {
+//            std::cin.clear(); // reset any error flags
+//            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // ignore any characters in the input buffer
+//        }
+//        else {
+//            ++i;
+//        }
+//    }
+//
+//    for (int j{ 0 }; j < lengthOfArray; ++j) {
+//        std::cout << array[j] << ' ';
+//    }
+//
+//    std::cout << "\n";
+//
+//    for (int k{ 0 }; k < lengthOfArray; ++k) {
+//        if (x == array[k]) {
+//            std::cout << "the number " << x << " is at the " << k << " index" << '\n';
+//            break;
+//        }
+//    }
+//
+//
+//    return 0;
+//}
+
+
+    //int maxScore{ 0 }; // keep track of our largest score
+    //for (int student{ 0 }; student < numStudents; ++student)
+    //{
+    //    if (scores[student] > maxScore)
+    //    {
+    //        maxScore = scores[student];
+    //    }
+    //}
+
+    //std::cout << "The best score was " << maxScore << '\n';
 
 //enum class MonsterType {
 //    orge,
